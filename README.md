@@ -110,6 +110,10 @@ autorefine/
 - **Log failures.** Negative results are as valuable as positive ones.
 - **Human in the loop.** Phase 3 is always opt-in. You're the real judge.
 
+## Using this with another AI assistant
+
+Nothing here is Claude-specific — `autorefine/SKILL.md` is a plain instruction file, no code dependencies. To use it with ChatGPT or another AI assistant, give it this repo's URL (or paste in `SKILL.md`) and ask it to set itself up and review a conversation for you. It's a one-shot request rather than a scheduled one, but the "Requirements" section above is the part to translate: the Claude-side tools that fetch past sessions (`list_sessions`, `read_transcript`) won't exist elsewhere, so on another assistant you'll need to give it an equivalent — e.g. paste in or upload the exported transcript you want reviewed — and Phase 3's subagent experiments will need that assistant's own equivalent of running a modified prompt against test scenarios, if it has one.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) — note this repo isn't actively maintained, so response times on issues and PRs will be slow to nonexistent.
